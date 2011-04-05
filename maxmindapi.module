@@ -1,0 +1,19 @@
+<?php
+
+function maxmind_binary_city($ip) {
+	include("geoipcity.inc");
+	include("geoipregionvars.php");
+	
+	// uncomment for Shared Memory support
+	// geoip_load_shared_mem("/usr/local/share/GeoIP/GeoIPCity.dat");
+	// $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_SHARED_MEMORY);
+	
+	$gi = geoip_open(
+		drupal_get_path('module','maxmindapi')."/data/GeoLiteCity.dat",GEOIP_STANDARD);
+	
+	$record = geoip_record_by_addr($gi, $ip);
+	geoip_close($gi);
+	return $record;
+
+}
+?>

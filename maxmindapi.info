@@ -1,0 +1,5 @@
+; $Id $
+name = "Maxmind API"
+description = from maxmind.com
+package = Location
+core = 7.x
