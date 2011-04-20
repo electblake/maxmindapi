@@ -1,0 +1,1 @@
+download GeoLiteCity.dat (or GeoCity.dat) and place in this folder.
